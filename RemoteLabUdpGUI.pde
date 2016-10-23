@@ -19,7 +19,7 @@ void setup(){
   tabla = new Table();// constructor of tabla Object
   tabla.addColumn("Time");
   tabla.addColumn("Volts");//Add columns
-   newRow = tabla.addRow();// add Row
+  newRow = tabla.addRow();// add Row
   udp = new UDP( this, 8888 );  // create a new datagram connection on port 6000
   udp.listen(true);             //wait for mensages
   intGUI();                     //start GUi
