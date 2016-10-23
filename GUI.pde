@@ -1,4 +1,5 @@
 import g4p_controls.*;//importamos libreria
+import static javax.swing.JOptionPane.*;//mensajes emergentes
 void intGUI(){
   BApagar = new GButton(this,10,45,100,35,"Descargar Condensado");
   BApagar.fireAllEvents(true);//Habilitamos toda las clases
@@ -29,11 +30,13 @@ void handleButtonEvents(GButton Botton,GEvent event){
     state = "Carga=1";
     flagD=false;
   }
+  String save = "new";
   if(Botton==BDetener&&event==GEvent.PRESSED){
     println("Boton Presionado: Stop ");//si lo presionamos
    if(flagD==false){
        flagD=true;
-       saveTable(tabla,"data/datos.csv");
+       save = showInputDialog("Digite nombre para guardar datoss");
+       saveTable(tabla,"data/"+save+".csv");
    }
      else
        flagD=false;
