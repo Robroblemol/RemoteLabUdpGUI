@@ -8,6 +8,8 @@ void intGUI(){
   BEncender.fireAllEvents(true);
   BDetener = new GButton(this, 230,45,100,35,"Detener");
   BDetener.fireAllEvents(true);
+  BSalvar = new GButton(this,340,45,100,35,"Salvar");
+  BSalvar.fireAllEvents(true);
 
   plot = new GPlot(this);// creamos la grafica
   plot.setPos(5, 85);//ajustamos la posicion
@@ -30,15 +32,17 @@ void handleButtonEvents(GButton Botton,GEvent event){
     state = "Carga=1";
     flagD=false;
   }
-  String save = "new";
   if(Botton==BDetener&&event==GEvent.PRESSED){
     println("Boton Presionado: Stop ");//si lo presionamos
    if(flagD==false){
        flagD=true;
-       save = showInputDialog("Digite nombre para guardar datoss");
-       saveTable(tabla,"data/"+save+".csv");
    }
      else
        flagD=false;
+  }
+  String save = "new";
+  if(Botton == BSalvar && event == GEvent.PRESSED){
+    save = showInputDialog("Digite nombre para guardar datoss");
+    saveTable(tabla,"data/"+save+".csv");
   }
 }

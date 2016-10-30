@@ -3,7 +3,7 @@ import grafica.*;//libreria grafica
 import hypermedia.net.*;
 
 UDP udp; // Udp Object
-GButton BApagar, BEncender, BDetener;//buttons Object
+GButton BApagar, BEncender, BDetener, BSalvar;//buttons Object
 GPlot plot; // grafica Object
 GPointsArray points = new GPointsArray();
 Table tabla;// declaro un objeto tipo tabla
